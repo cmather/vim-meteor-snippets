@@ -1,0 +1,61 @@
+snippet tmpl
+	Template.${1:template_name}.helpers({
+		${2}
+	});
+
+	Template.${1:template_name}.events({
+		${3}
+	});
+snippet thelpers
+	Template.${1:template_name}.helpers({
+		${2}
+	});
+snippet te
+	Template.${1:template_name}.events({
+		${2}
+	});
+snippet ehandler
+	'${1:selector}': function (e, tmpl) {
+		${3}
+	}${2:,}
+snippet pub
+	Meteor.publish('${1}', function () {
+		${2}
+	});
+snippet sub
+	Meteor.subscribe('${1}');
+snippet startup
+	Meteor.startup(function () {
+		${1}	
+	});
+snippet helper
+	Handlebars.registerHelper('${1}', function (options) {
+		${2}
+	});
+snippet filter
+	function ${1} (context, page) {
+		${2}
+	}
+snippet pages
+	Meteor.pages({
+		${1}
+	});
+snippet route
+	this.route('${1}', {
+		path: '${2}'
+	});
+snippet sset
+	Session.set('${1:key}', ${2:value});
+snippet sget
+	Session.get('${1:key}');
+snippet sequals
+	Session.equals('${1:key}', ${2:value});
+
+snippet group
+	/*****************************************************************************/
+	/* ${1} */
+	/*****************************************************************************/
+snippet test
+	Tinytest.add('${1}', function (test) {
+		${2}
+	});
