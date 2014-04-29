@@ -63,3 +63,11 @@ snippet auto
 	Deps.autorun(function (c) {
 		${1}
 	});
+snippet client
+	if (Meteor.isClient) {
+		${1}
+	}
+snippet server
+	if (Meteor.isServer) {
+		${1}
+	}
