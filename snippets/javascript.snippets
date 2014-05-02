@@ -1,11 +1,3 @@
-snippet tmpl
-	Template.${1:template_name}.helpers({
-		${2}
-	});
-
-	Template.${1:template_name}.events({
-		${3}
-	});
 snippet thelpers
 	Template.${1:template_name}.helpers({
 		${2}
@@ -71,3 +63,7 @@ snippet server
 	if (Meteor.isServer) {
 		${1}
 	}
+snippet methods
+	Meteor.methods({
+		${1}
+	});
