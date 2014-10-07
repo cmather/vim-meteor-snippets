@@ -41,8 +41,10 @@ snippet rconfig
 		${1}
 	});
 snippet route
-	this.route('${1}', {
-		path: '${2}'
+	Router.route('${1}', {
+		name: '${2}',
+		controller: '${3}',
+		action: '${4}'
 	});
 snippet sset
 	Session.set('${1:key}', ${2:value});
