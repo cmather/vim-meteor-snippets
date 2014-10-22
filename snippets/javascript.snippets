@@ -21,7 +21,7 @@ snippet startup
 		${1}	
 	});
 snippet helper
-	Handlebars.registerHelper('${1}', function (options) {
+	Template.registerHelper('${1}', function (options) {
 		${2}
 	});
 snippet filter
@@ -62,7 +62,7 @@ snippet test
 		${2}
 	});
 snippet auto
-	Deps.autorun(function (c) {
+	Tracker.autorun(function (c) {
 		${1}
 	});
 snippet client
