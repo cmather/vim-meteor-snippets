@@ -1,11 +1,3 @@
-snippet tmpl
-	Template.${1:template_name}.helpers({
-		${2}
-	});
-
-	Template.${1:template_name}.events({
-		${3}
-	});
 snippet thelpers
 	Template.${1:template_name}.helpers({
 		${2}
@@ -29,7 +21,7 @@ snippet startup
 		${1}	
 	});
 snippet helper
-	Handlebars.registerHelper('${1}', function (options) {
+	Template.registerHelper('${1}', function (options) {
 		${2}
 	});
 snippet filter
@@ -40,9 +32,19 @@ snippet pages
 	Meteor.pages({
 		${1}
 	});
+snippet rmap
+	Router.map(function () {
+		${1}
+	});
+snippet rconfig
+	Router.configure({
+		${1}
+	});
 snippet route
-	this.route('${1}', {
-		path: '${2}'
+	Router.route('${1}', {
+		name: '${2}',
+		controller: '${3}',
+		action: '${4}'
 	});
 snippet sset
 	Session.set('${1:key}', ${2:value});
@@ -51,6 +53,9 @@ snippet sget
 snippet sequals
 	Session.equals('${1:key}', ${2:value});
 
+snippet sdefault
+	Session.setDefault('${1:key}', ${2:value});
+
 snippet group
 	/*****************************************************************************/
 	/* ${1} */
@@ -58,4 +63,20 @@ snippet group
 snippet test
 	Tinytest.add('${1}', function (test) {
 		${2}
+	});
+snippet auto
+	Tracker.autorun(function (c) {
+		${1}
+	});
+snippet client
+	if (Meteor.isClient) {
+		${1}
+	}
+snippet server
+	if (Meteor.isServer) {
+		${1}
+	}
+snippet methods
+	Meteor.methods({
+		${1}
 	});
