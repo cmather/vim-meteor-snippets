@@ -1,26 +1,31 @@
 # collection
 snippet coll
-	${1:Collection}  = new Meteor.Collection "${2:collection}"
+	${1:Collection}  = new Mongo.Collection "${2:collection}"
 
 # isClient block
 snippet isc
 	if Meteor.isClient
-	  ${1:isClient block}
+		${1:isClient block}
 
 # isServer block
 snippet iss
 	if Meteor.isServer
-	  ${1:isServer block}
+		${1:isServer block}
+
+# isServer block
+snippet iscod
+	if Meteor.isCodrova
+		${1:isServer block}
 
 # startup
 snippet start
 	if Meteor.startup ->
-	  ${1:startup block}
+		${1:startup block}
 
 # publication
 snippet pub
 	Meteor.publish "${1:pub-name}", ->
-	  ${2:collection}.find(${3:target})
+		${2:collection}.find(${3:target})
 
 # subscription
 snippet sub
@@ -29,31 +34,36 @@ snippet sub
 # Template events
 snippet tle
 	Template.${1:Template}.events
-	  "${2: action} ${3: on}": ->
-	     ${4: event-block}	
+		"${2: action} ${3: on}":(${4:}) ->
+			 ${5: event-block}	
 
-# Template helper
-snippet tlh
-	Template.${1:Template}.${2:helper}= ->
-	  ${3:block}
-
+	
 # Template mulitiple helpers
-snippet tlhs
+snippet tlh
 	Template.${1:Template}.helpers
-	  ${2:name}: ->
+		${2:name}: ->
 		${3: block-1}
-	  ${4:name}: ->
-		${5: block-2}
 
 # Template rendered
 snippet tlr
-	Template.${1:Template}.rendered= ->
-	  ${2: block}
+	Template.${1:Template}.onRendered ->
+		${2: block}
 
-# Deps.autorun
-snippet deps
-	Deps.autorun ->
-	  ${1:deps block}
+
+# Template onCreated 
+snippet tlc
+	Template.${1:Template}.onCreated ->
+		${2: block}
+
+# Template onDestroyed
+snippet tlc
+	Template.${1:Template}.onDestroyed ->
+		${2: block}
+
+# Tracker.autorun
+snippet trac
+	Tracker.autorun ->
+		${1:deps block}
 
 # Set Session
 snippet sset
@@ -63,33 +73,37 @@ snippet sset
 snippet sget
 	Session.get "${1:key}"
 
+# Set default session
+snippet sdef
+	Session.setDefault "${1:key}", "${2:value}"
+
+# Session.equals
+snippet seq
+	Session.equals "${1:key}", "${2:value}"
+
 # Meteor.methods
 snippet meth
 	Meteor.methods
-	  ${1:name}: (${2:arg1, arg2}) ->
+		${1:name}: (${2:arg1, arg2}) ->
 		${4: code}
 
 # Allow method
 snippet allow
 	${1:name}.allow
-	  ${2:target}
+		${2:target}
 
 # Deny method
 snippet deny
 	${1:name}.deny
-	  ${2:target}
+		${2:target}
 
 # Router.configure
 snippet rconfig
 	Router.configure
-	  layoutTemplate: '${1:MasterLayout}',
-	  loadingTemplate: '${2:Loading}',
-	  notFoundTemplate: '${3:NotFound}',
+		layoutTemplate: '${1:MasterLayout}',
+		loadingTemplate: '${2:Loading}',
+		notFoundTemplate: '${3:NotFound}',
 
-# Router.map
-snippet rmap
-	Router.map ->
-	  @route '${1:name}', path: '${2:path}'
 
 # Router go
 snippet rgo
@@ -98,22 +112,22 @@ snippet rgo
 # single route
 snippet route
 	@route '${1:name}', 
-	  path: '${2:path}'
-	  template: '${3:template}'
-# single route with controller
+		path: '${2:path}'
+		template: '${3:template}'
 
+# single route with controller
 snippet rcon
 	@route '${1:name}', 
-	  path: '${2:path}'
-	  template: '${3:template}'
-	  controller: ${4:controller}
+		path: '${2:path}'
+		template: '${3:template}'
+		controller: ${4:controller}
 
 # register global helper
 snippet regh
-	UI.registerHelper "${1}", ("${2}") ->
-	  ${3:code}	
+	Template.registerHelper "${1}", ("${2}") ->
+		${3:code}	
 
 # user name only for accounts ui
 snippet aconfig
 	Accounts.ui.config
-	  passwordSignupFields: 'USERNAME_ONLY'
+		passwordSignupFields: 'USERNAME_ONLY'
