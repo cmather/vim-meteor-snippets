@@ -213,3 +213,23 @@ snippet keydown
 snippet keyup
 	"keyup ${1:selector}": (${2}) ->
 		${3}
+
+# Meteor.setTimeout
+snippet setTimeout
+	Meteor.setTimeout(->
+		${1}
+	), ${2}
+
+# Meteor.setInterval
+snippet setInterval
+	Meteor.setInterval(->
+		${1}
+	), ${2}
+
+# Meteor.clearTimeout
+snippet clearTimeout
+	Meteor.clearTimeout(${1})
+
+# Meteor.clearInterval
+snippet clearInterval
+	Meteor.clearInterval(${1})
