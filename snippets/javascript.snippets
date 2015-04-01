@@ -21,7 +21,7 @@ snippet startup
 		${1}	
 	});
 snippet helper
-	Handlebars.registerHelper('${1}', function (options) {
+	Template.registerHelper('${1}', function (options) {
 		${2}
 	});
 snippet filter
@@ -53,6 +53,9 @@ snippet sget
 snippet sequals
 	Session.equals('${1:key}', ${2:value});
 
+snippet sdefault
+	Session.setDefault('${1:key}', ${2:value});
+
 snippet group
 	/*****************************************************************************/
 	/* ${1} */
@@ -62,7 +65,7 @@ snippet test
 		${2}
 	});
 snippet auto
-	Deps.autorun(function (c) {
+	Tracker.autorun(function (c) {
 		${1}
 	});
 snippet client
