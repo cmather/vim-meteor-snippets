@@ -131,3 +131,85 @@ snippet regh
 snippet aconfig
 	Accounts.ui.config
 		passwordSignupFields: 'USERNAME_ONLY'
+
+# other miscellaneous snippets
+
+# Meteor.user()
+snippet muser
+	Meteor.user()
+
+# Meteor.userId()
+snippet muid
+	Meteor.userId()
+
+# dynamic template
+snippet dynamic
+	{{> Template.dynamic template="${1:template}"}}
+
+
+# single event
+snippet tevent
+	"${1: action} ${2: on}":(${3:}) ->
+		${4}	
+
+# click event
+snippet click
+	"click ${1:selector}": (${2}) ->
+		${3}
+
+# double click
+snippet dbclick
+	"dbclick ${1:selector}": (${2}) ->
+		${3}
+
+
+# focus 
+snippet focus
+	"focus ${1:selector}": (${2}) ->
+		${3}
+
+# blur 
+snippet blur 
+	"blur ${1:selector}": (${2}) ->
+		${3}
+
+# change 
+snippet change 
+	"change ${1:selector}": (${2}) ->
+		${3}
+
+# mouseenter
+snippet mouseenter
+	"mouseenter ${1:selector}": (${2}) ->
+		${3}
+
+# mouseleave
+snippet mouseleave
+	"mouseleave ${1:selector}": (${2}) ->
+		${3}
+
+# mousedown
+snippet mousedown
+	"mousedown ${1:selector}": (${2}) ->
+		${3}
+
+# mouseup
+snippet mouseup
+	"mouseup ${1:selector}": (${2}) ->
+		${3}
+
+# keypress 
+snippet keypress
+	"keypress ${1:selector}": (${2}) ->
+		${3}
+		
+
+# keydown
+snippet keydown
+	"keydown ${1:selector}": (${2}) ->
+		${3}
+
+# keyup
+snippet keyup
+	"keyup ${1:selector}": (${2}) ->
+		${3}
